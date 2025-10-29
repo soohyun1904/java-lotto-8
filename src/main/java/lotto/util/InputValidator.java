@@ -1,6 +1,6 @@
 package lotto.util;
 
-import lotto.exception.InputException;
+import lotto.exception.InputValidationException;
 import static lotto.exception.message.ErrorMessage.EMPTY_PURCHASE_AMOUNT;
 
 public class InputValidator {
@@ -12,7 +12,7 @@ public class InputValidator {
 
     public static void checkNotEmpty(String input){
         if(input.isBlank()){
-            throw new InputException(EMPTY_PURCHASE_AMOUNT);
+            throw new InputValidationException(EMPTY_PURCHASE_AMOUNT);
         }
     }
 }

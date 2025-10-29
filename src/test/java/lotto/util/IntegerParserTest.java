@@ -1,6 +1,6 @@
 package lotto.util;
 
-import lotto.exception.InputException;
+import lotto.exception.InputValidationException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -25,7 +25,7 @@ class IntegerParserTest {
     void throwExceptionWhenInputIsEmpty(){
         String input = "  ";
         assertThatThrownBy(() -> IntegerParser.parse(input))
-                .isInstanceOf(InputException.class)
+                .isInstanceOf(InputValidationException.class)
                 .hasMessage(EMPTY_PURCHASE_AMOUNT.getMessage());
     }
 
@@ -34,7 +34,7 @@ class IntegerParserTest {
     @DisplayName("유효하지 않은 처리를 받으면 예외처리한다.")
     void throwExceptionWhenInputIsNotInteger(String input){
         assertThatThrownBy(() -> IntegerParser.parse(input))
-                .isInstanceOf(InputException.class)
+                .isInstanceOf(InputValidationException.class)
                 .hasMessage(INVALID_INTEGER_FORMAT.getMessage());
     }
 }

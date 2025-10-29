@@ -1,6 +1,6 @@
 package lotto.util;
 
-import lotto.exception.InputException;
+import lotto.exception.InputValidationException;
 import static lotto.exception.message.ErrorMessage.INVALID_INTEGER_FORMAT;
 import static lotto.util.InputValidator.checkNotEmpty;
 
@@ -13,7 +13,7 @@ public class IntegerParser {
         try{
             return Integer.parseInt(input);
         }catch (NumberFormatException e){
-            throw new InputException(INVALID_INTEGER_FORMAT);
+            throw new InputValidationException(INVALID_INTEGER_FORMAT);
         }
     }
 }
