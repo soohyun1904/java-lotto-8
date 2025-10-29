@@ -13,6 +13,10 @@ public class PurchaseAmount {
         this.amount = amount;
     }
 
+    public int calculatorLottoCount(){
+        return amount / LOTTO_PRICE;
+    }
+
     private void validate(int amount){
         validatePositive(amount);
         validateAmountUnit(amount);
