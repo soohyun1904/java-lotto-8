@@ -1,7 +1,6 @@
 package lotto.exception;
 
 import lotto.exception.message.ErrorMessage;
-
 import static lotto.exception.message.ErrorMessage.INVALID_VALUE;
 
 public class InputValidationException extends IllegalArgumentException{
