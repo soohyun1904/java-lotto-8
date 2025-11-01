@@ -6,6 +6,7 @@ import static lotto.exception.message.ErrorMessage.INVALID_POSITIVE_AMOUNT;
 
 public class PurchaseAmount {
     private static final int LOTTO_PRICE = 1000;
+
     private final int amount;
 
     public PurchaseAmount(int amount) {
@@ -13,7 +14,7 @@ public class PurchaseAmount {
         this.amount = amount;
     }
 
-    public int calculatorLottoCount(){
+    public int calculateLottoCount(){
         return amount / LOTTO_PRICE;
     }
 
