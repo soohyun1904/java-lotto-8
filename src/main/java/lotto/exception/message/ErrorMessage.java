@@ -14,7 +14,10 @@ public enum ErrorMessage {
 
     INVALID_LOTTO_RANGE("[ERROR] 당첨 번호는 1 ~ 45의 정수만 입력 가능합니다. 다시 입력해주세요."),
     INVALID_LOTTO_SIZE("[ERROR] 로또 번호는 6개여야 합니다. 다시 입력해주세요."),
-    DUPLICATE_LOTTO_NUMBERS("[ERROR] 로또 번호는 같은 번호가 존재해서는 안됩니다. 다시 입력해주세요.");
+    DUPLICATE_LOTTO_NUMBERS("[ERROR] 로또 번호는 같은 번호가 존재해서는 안됩니다. 다시 입력해주세요."),
+
+    INVALID_BONUS_NUMBER_RANGE("[ERROR] 보너스 번호는 1 ~ 45의 정수만 입력 가능합니다. 다시 입력해주세요."),
+    DUPLICATE_BONUS_WITH_WINNING_NUMBER("[ERROR] 보너스 번호는 당첨 번호와 같은 번호가 존재해서는 안됩니다. 다시 입력해주세요.");
     private final String message;
 
     ErrorMessage(String message) {
