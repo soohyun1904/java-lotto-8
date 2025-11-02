@@ -13,13 +13,22 @@ public class Lotto {
 
     public Lotto(List<LottoNumber> numbers) {
         validate(numbers);
-        this.numbers = numbers;
+        this.numbers = List.copyOf(numbers);
     }
 
-    public List<Integer> getNumbers() {
+    public List<LottoNumber> getNumbers() {
+        return numbers;
+    }
+
+    public int countMatch(Lotto other){
+        return (int) this.numbers.stream()
+                .filter(other.numbers::contains)
+                .count();
+    }
+
+    public boolean hasBonusNumber(BonusNumber number) {
         return numbers.stream()
-                .map(LottoNumber::number)
-                .toList();
+                .anyMatch(lottoNumber -> lottoNumber.number() == number.number());
     }
 
     private void validate(List<LottoNumber>  numbers) {

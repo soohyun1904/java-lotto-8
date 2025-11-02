@@ -13,6 +13,12 @@ public class WinningLotto {
         this.bonusNumber = bonusNumber;
     }
 
+    public Rank calculateRank(Lotto userLotto) {
+        int matchCount = lotto.countMatch(userLotto);
+        boolean bonusMatch = userLotto.hasBonusNumber(bonusNumber);
+        return Rank.of(matchCount, bonusMatch);
+    }
+
     private void validate(Lotto lotto, BonusNumber bonusNumber){
         validateBonusNotDuplicates(lotto, bonusNumber);
     }
@@ -24,7 +30,6 @@ public class WinningLotto {
     }
 
     private boolean hasDuplicates(Lotto lotto, BonusNumber bonusNumber) {
-        return lotto.getNumbers().stream()
-                .anyMatch(number -> number == bonusNumber.number());
+        return lotto.hasBonusNumber(bonusNumber);
     }
 }
