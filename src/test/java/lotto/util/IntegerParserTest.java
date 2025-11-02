@@ -52,7 +52,7 @@ class IntegerParserTest {
     @DisplayName("구분자로 구분된 정수 문자열을 리스트로 변환한다.")
     void parseIntegersWithDelimiter(){
         String input = "1,2,3,4,5,6";
-        List<Integer> integers = IntegerParser.parseWithDelimiter(input, ",");
+        List<Integer> integers = IntegerParser.parseWithDelimiter(input);
         assertThat(integers).containsExactly(1, 2, 3, 4, 5, 6);
     }
 
@@ -60,7 +60,7 @@ class IntegerParserTest {
     @ValueSource(strings = {", ,2,34,5", ",12,32,12  ,32,12"})
     @DisplayName("쉼표 사이에 빈 값이 있으면 예외처리한다.")
     void throwExceptionWhenInputContainsEmptyValueBetweenCommas(String input) {
-        assertThatThrownBy(() -> IntegerParser.parseWithDelimiter(input, ","))
+        assertThatThrownBy(() -> IntegerParser.parseWithDelimiter(input))
                 .isInstanceOf(InputValidationException.class)
                 .hasMessage(INVALID_EMPTY_TOKEN.getMessage());
     }
@@ -78,7 +78,7 @@ class IntegerParserTest {
     @ValueSource(strings = {"1,2147483648,3", "1,-2147483649,3"})
     @DisplayName("구분자 사이에 정수 범위를 초과하는 값이 있으면 예외를 발생시킨다")
     void throwExceptionWhenOutOfRangeBetweenDelimiters(String input){
-        assertThatThrownBy(() -> IntegerParser.parseWithDelimiter(input, ","))
+        assertThatThrownBy(() -> IntegerParser.parseWithDelimiter(input))
                 .isInstanceOf(InputValidationException.class)
                 .hasMessage(INVALID_INTEGER_RANGE.getMessage());
     }
