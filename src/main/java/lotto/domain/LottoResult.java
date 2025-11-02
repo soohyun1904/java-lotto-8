@@ -47,6 +47,7 @@ public class LottoResult {
     }
 
     public double calculateRateOfReturnPercentage() {
-        return calculateRateOfReturn() * 100;
+        double rate = calculateRateOfReturn() * 100;
+        return Math.round(rate * 10) / 10.0;
     }
 }
