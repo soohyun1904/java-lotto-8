@@ -24,7 +24,7 @@ public class Lotto {
 
     private void validate(List<LottoNumber>  numbers) {
         validateSize(numbers);
-        validateNoDuplicates(numbers);
+        validateNotDuplicates(numbers);
     }
 
     private void validateSize(List<LottoNumber>  numbers) {
@@ -33,7 +33,7 @@ public class Lotto {
         }
     }
 
-    private void validateNoDuplicates(List<LottoNumber> numbers){
+    private void validateNotDuplicates(List<LottoNumber> numbers){
         if(hasDuplicates(numbers)){
             throw new DomainValidationException(DUPLICATE_LOTTO_NUMBERS);
         }

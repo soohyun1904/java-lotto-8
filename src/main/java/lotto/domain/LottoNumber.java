@@ -7,7 +7,6 @@ public record LottoNumber(int number) {
     private static final int MIN_NUMBER = 1;
     private static final int MAX_NUMBER = 45;
 
-
     public LottoNumber{
         validate(number);
     }
