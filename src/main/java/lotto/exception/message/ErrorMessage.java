@@ -9,12 +9,12 @@ public enum ErrorMessage {
     INVALID_INTEGER_FORMAT("[ERROR] 입력은 정수만 가능합니다. 다시 입력해주세요."),
     INVALID_INTEGER_RANGE("[ERROR] 입력 가능한 범위를 초과했습니다. 다시 입력해주세요."),
 
-    EMPTY_PURCHASE_AMOUNT("[ERROR] 로또 금액이 입력되지 않았습니다. 로또 금액을 입력해주세요."),
-    INVALID_INTEGER2_FORMAT("[ERROR] 로또 금액은 정수만 입력 가능합니다. 다시 입력해주세요."),
-
     INVALID_POSITIVE_AMOUNT("[ERROR] 로또 금액은 양의 정수만 입력 가능합니다. 다시 입력해주세요."),
-    INVALID_AMOUNT_UNIT("[ERROR] 로또 금액은 1000원 단위로 입력해야 합니다. 다시 입력해주세요.");
+    INVALID_AMOUNT_UNIT("[ERROR] 로또 금액은 1000원 단위로 입력해야 합니다. 다시 입력해주세요."),
 
+    INVALID_LOTTO_RANGE("[ERROR] 당첨 번호는 1 ~ 45의 정수만 입력 가능합니다. 다시 입력해주세요."),
+    INVALID_LOTTO_SIZE("[ERROR] 로또 번호는 6개여야 합니다. 다시 입력해주세요."),
+    DUPLICATE_LOTTO_NUMBERS("[ERROR] 로또 번호는 같은 번호가 존재해서는 안됩니다. 다시 입력해주세요.");
     private final String message;
 
     ErrorMessage(String message) {
