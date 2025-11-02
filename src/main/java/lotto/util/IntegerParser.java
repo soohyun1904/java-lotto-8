@@ -17,10 +17,9 @@ public class IntegerParser {
         return convertToInteger(value);
     }
 
-    public static List<Integer> parseWithDelimiter(String value, String delimiter){
+    public static List<Integer> parseWithDelimiter(String value){
         validateNotBlank(value);
-        return Arrays.stream(value.split(delimiter))
-                .map(String::trim)
+        return Arrays.stream(value.split(DELIMITER))
                 .peek(IntegerParser::validateToken)
                 .map(IntegerParser::convertToInteger)
                 .toList();
