@@ -21,10 +21,6 @@ public class Lottos {
         return lottos.size();
     }
 
-    public int amount(){
-        return size()*1000;
-    }
-
     public LottoResult calculateResult(WinningLotto winningLotto) {
         Map<Rank, Long> rankCounts = lottos.stream()
                 .map(winningLotto::calculateRank)

@@ -26,11 +26,6 @@ public class LottoResult {
         return rankCounts.getOrDefault(rank, 0L);
     }
 
-    public Map<Rank, Long> getRankCounts() {
-        return Map.copyOf(rankCounts);
-    }
-
-
     public int getTotalPrize() {
         return rankCounts.entrySet().stream()
                 .filter(entry -> entry.getKey().isWinning())
