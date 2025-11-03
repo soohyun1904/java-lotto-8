@@ -51,6 +51,4 @@ public class Lotto {
     private boolean hasDuplicates(List<LottoNumber> numbers) {
         return new HashSet<>(numbers).size() != numbers.size();
     }
-
-    // TODO: 추가 기능 구현
 }

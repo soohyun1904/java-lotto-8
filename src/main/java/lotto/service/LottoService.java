@@ -4,7 +4,6 @@ import lotto.domain.*;
 import lotto.dto.LottoResultDto;
 import lotto.dto.LottosDto;
 import lotto.util.NumbersGenerator;
-
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -19,7 +18,6 @@ public class LottoService {
         PurchaseAmount purchaseAmount = new PurchaseAmount(amount);
         List<Lotto> generatedLottos = generateLottos(purchaseAmount.calculateLottoCount());
         Lottos lottos = new Lottos(generatedLottos, purchaseAmount);
-
         return LottosDto.from(lottos);
     }
 
@@ -28,12 +26,10 @@ public class LottoService {
         List<LottoNumber> lottoNumbers = winningNumbers.stream()
                 .map(LottoNumber::new)
                 .toList();
-
         Lotto lotto = new Lotto(lottoNumbers);
         BonusNumber bonus = new BonusNumber(bonusNumber);
         WinningLotto winningLotto = new WinningLotto(lotto, bonus);
         LottoResult lottoResult = lottos.calculateResult(winningLotto);
-
         return LottoResultDto.from(lottoResult);
     }
 

@@ -2,9 +2,7 @@ package lotto.domain;
 
 import java.util.Arrays;
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class LottoResult {
     private final Map<Rank, Long> rankCounts;

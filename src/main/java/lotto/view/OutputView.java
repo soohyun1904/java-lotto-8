@@ -3,7 +3,6 @@ package lotto.view;
 import lotto.dto.LottoDto;
 import lotto.dto.LottoResultDto;
 import lotto.dto.LottosDto;
-
 import java.util.List;
 
 public class OutputView {
@@ -40,11 +39,9 @@ public class OutputView {
         System.out.println();
         System.out.println(STATISTICS_HEADER);
         System.out.println(STATISTICS_SEPARATOR);
-
         RANK_INFOS.forEach(rank ->
                 printRankStatistics(rank.name(), rank.description(), result)
         );
-
         System.out.println(String.format(RATE_OF_RETURN_MESSAGE, result.rateOfReturn()));
     }
 

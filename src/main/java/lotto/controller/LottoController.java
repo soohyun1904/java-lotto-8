@@ -1,14 +1,11 @@
 package lotto.controller;
 
-import lotto.domain.PurchaseAmount;
-import lotto.dto.LottoDto;
 import lotto.dto.LottoResultDto;
 import lotto.dto.LottosDto;
 import lotto.service.LottoService;
 import lotto.util.IntegerParser;
 import lotto.view.InputView;
 import lotto.view.OutputView;
-
 import java.util.List;
 import java.util.function.Supplier;
 

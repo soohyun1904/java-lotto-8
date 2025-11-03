@@ -3,11 +3,10 @@ package lotto.dto;
 import lotto.domain.Lotto;
 import lotto.domain.Lottos;
 import lotto.domain.PurchaseAmount;
-
 import java.util.List;
 
 public record LottosDto(int count, List<LottoDto> lottos) {
-   private static final int LOTTO_PRICE = 1000;
+    private static final int LOTTO_PRICE = 1000;
 
     public static LottosDto from(Lottos lottos){
         return new LottosDto(

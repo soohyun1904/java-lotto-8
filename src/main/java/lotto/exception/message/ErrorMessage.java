@@ -1,7 +1,6 @@
 package lotto.exception.message;
 
 public enum ErrorMessage {
-    NULL_INPUT("[ERROR] 입력값이 null입니다. 오류가 발생하였습니다."),
     INVALID_VALUE("[ERROR] 유효하지 않는 값입니다."),
 
     INVALID_EMPTY_INPUT("[ERROR] 입력값이 비어있습니다. 다시 입력해주세요."),
@@ -18,6 +17,7 @@ public enum ErrorMessage {
 
     INVALID_BONUS_NUMBER_RANGE("[ERROR] 보너스 번호는 1 ~ 45의 정수만 입력 가능합니다. 다시 입력해주세요."),
     DUPLICATE_BONUS_WITH_WINNING_NUMBER("[ERROR] 보너스 번호는 당첨 번호와 같은 번호가 존재해서는 안됩니다. 다시 입력해주세요.");
+
     private final String message;
 
     ErrorMessage(String message) {
