@@ -6,9 +6,11 @@ import java.util.stream.Collectors;
 
 public class Lottos {
     private final List<Lotto> lottos;
+    private final PurchaseAmount purchaseAmount;
 
-    public Lottos(List<Lotto> lottos) {
+    public Lottos(List<Lotto> lottos, PurchaseAmount purchaseAmount) {
         this.lottos = List.copyOf(lottos);
+        this.purchaseAmount = purchaseAmount;
     }
 
     public List<Lotto> getLottos() {
@@ -23,15 +25,13 @@ public class Lottos {
         return size()*1000;
     }
 
-    // 도메인 로직: 당첨 통계 계산
-    public LottoResult calculateResult(WinningLotto winningLotto, PurchaseAmount purchaseAmount) {
+    public LottoResult calculateResult(WinningLotto winningLotto) {
         Map<Rank, Long> rankCounts = lottos.stream()
                 .map(winningLotto::calculateRank)
                 .collect(Collectors.groupingBy(
                         rank -> rank,
                         Collectors.counting()
                 ));
-
         return new LottoResult(rankCounts, purchaseAmount);
     }
 }

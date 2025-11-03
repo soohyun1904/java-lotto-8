@@ -18,7 +18,7 @@ public class LottoService {
     public LottosDto purchaseLottos(int amount) {
         PurchaseAmount purchaseAmount = new PurchaseAmount(amount);
         List<Lotto> generatedLottos = generateLottos(purchaseAmount.calculateLottoCount());
-        Lottos lottos = new Lottos(generatedLottos);
+        Lottos lottos = new Lottos(generatedLottos, purchaseAmount);
 
         return LottosDto.from(lottos);
     }
@@ -32,7 +32,7 @@ public class LottoService {
         Lotto lotto = new Lotto(lottoNumbers);
         BonusNumber bonus = new BonusNumber(bonusNumber);
         WinningLotto winningLotto = new WinningLotto(lotto, bonus);
-        LottoResult lottoResult = lottos.calculateResult(winningLotto, new PurchaseAmount(lottos.size() * 1000));
+        LottoResult lottoResult = lottos.calculateResult(winningLotto);
 
         return LottoResultDto.from(lottoResult);
     }
