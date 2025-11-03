@@ -25,7 +25,6 @@ class PurchaseAmountTest {
     void calculateLottoCount(int amount) {
         PurchaseAmount purchaseAmount = new PurchaseAmount(amount);
         int expectedCount = amount / 1000;
-
         int actualCount = purchaseAmount.calculateLottoCount();
         assertThat(actualCount).isEqualTo(expectedCount);
     }
